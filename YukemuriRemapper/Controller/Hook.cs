@@ -9,17 +9,17 @@ namespace YukemuriRemapper.Controller
     public sealed class Hook : IDisposable
     {
         private IntPtr HookId;
-        private Configuration Settings;
+        private ProcessConfiguration Settings;
         private HookProc HookProcInstance;
         private Process TargetProcess;
 
 
         public Hook() { }
-        public Hook(Configuration settings, Process targetProcess) => HookKey(settings, targetProcess);
+        public Hook(ProcessConfiguration settings, Process targetProcess) => HookKey(settings, targetProcess);
 
 
 
-        public void HookKey(Configuration settings, Process targetProcess)
+        public void HookKey(ProcessConfiguration settings, Process targetProcess)
         {
             if (HookId != default)
                 return;

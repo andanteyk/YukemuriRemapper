@@ -13,7 +13,7 @@ namespace YukemuriRemapper
         readonly int ConfigurationIndex;
         public Configuration Result { get; private set; }
 
-        private Configuration CurrentConfiguration => Configuration.Configurations[ConfigurationIndex];
+        private ProcessConfiguration CurrentConfiguration => Configuration.Configurations[ConfigurationIndex];
 
         public FormSettings()
         {
@@ -29,7 +29,7 @@ namespace YukemuriRemapper
         private void FormSettings_Load(object sender, EventArgs e)
         {
             if (ConfigurationIndex >= Configuration.Configurations.Count)
-                Configuration.Configurations.Add(new Configuration());
+                Configuration.Configurations.Add(new ProcessConfiguration());
 
             var proc = Configuration.Configurations[ConfigurationIndex];
 
